@@ -1,0 +1,51 @@
+{
+  "dxt_version": "0.1",
+  "name": "powershell-executor",
+  "display_name": "PowerShell Executor",
+  "version": "1.0.0",
+  "description": "Execute PowerShell commands and scripts safely through Claude",
+  "author": {
+    "name": "fixitdaz"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
+      "env": {}
+    }
+  },
+  "tools": [
+    {
+      "name": "execute_powershell",
+      "description": "Execute PowerShell commands and return the output"
+    },
+    {
+      "name": "run_powershell_script",
+      "description": "Run PowerShell scripts from file paths"
+    }
+  ],
+  "user_config": {
+    "command_timeout": {
+      "type": "number",
+      "title": "Command Timeout",
+      "description": "Maximum time in seconds to wait for PowerShell commands to complete",
+      "required": false,
+      "sensitive": false,
+      "default": 30,
+      "min": 1,
+      "max": 300
+    }
+  },
+  "keywords": [
+    "powershell",
+    "windows",
+    "command",
+    "script",
+    "automation"
+  ],
+  "license": "MIT"
+}
