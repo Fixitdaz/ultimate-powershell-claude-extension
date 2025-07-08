@@ -4,8 +4,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# DXT output
+# DXT output (except releases folder)
 *.dxt
+!releases/*.dxt
 
 # Backup files
 *.backup.*
